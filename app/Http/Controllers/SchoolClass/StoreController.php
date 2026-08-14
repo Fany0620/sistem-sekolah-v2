@@ -10,8 +10,11 @@ class StoreController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, string $id)
     {
-        return "Melakukan penambahan data kelas";
+        $title = 'Sistem Sekolah | Detail Kelas';
+        return view('classes.show', [
+            'title' => $title
+        ]);
     }
 }

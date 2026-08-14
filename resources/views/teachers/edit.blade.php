@@ -5,14 +5,15 @@
 @section('content')
     <div class="mb-8 border-b border-[#E5E3DB] pb-5">
 
-        <a href="{{ route('students.index') }}" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku
+        <a href="{{ route('teachers.index') }}"
+            class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku
 
             Induk</a>
 
-        <h1 class="font-display mt-2 text-3xl font-semibold text-[#16213A]">Ubah Data Siswa</h1>
+        <h1 class="font-display mt-2 text-3xl font-semibold text-[#16213A]">Ubah Data Guru</h1>
 
         <p class="mt-1 text-sm text-slate-500">Memperbarui catatan atas nama <span class="font-medium text-[#16213A]">Budi
-                Ariyanto</span>.</p>
+                Santoso</span>.</p>
 
     </div>
 
@@ -22,10 +23,10 @@
 
         <div>
 
-            <label for="nis"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">NIS</label>
+            <label for="nip"
+                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">NIP</label>
 
-            <input type="text" id="nis" name="nis" value="2024001"
+            <input type="text" id="nip" name="nip" value="2024001"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
         </div>
@@ -38,7 +39,7 @@
 
                 Lengkap</label>
 
-            <input type="text" id="name" name="name" value="Budi Ariyanto"
+            <input type="text" id="name" name="name" value="Budi Santoso"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
         </div>
@@ -66,19 +67,11 @@
 
         <div>
 
-            <label for="major"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label>
+            <label for="subject" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Mata
+                Pelajaran Yang Diampu</label>
 
-            <select id="major" name="major"
+            <input type="text" id="subject" name="subject" value="AKD"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-
-                <option value="" selected>AKL</option>
-
-                <option value="">TKJ</option>
-
-                <option value="">BiD</option>
-
-            </select>
 
         </div>
 
@@ -86,19 +79,28 @@
 
         <div>
 
-            <label for="class"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Kelas</label>
+            <label for="phone" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nomor
+                Telepon</label>
 
-            <input type="text" id="class" name="class" value="XII AKL 1"
+            <input type="text" id="phone" name="phone" value="081234560001"
+                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+
+        </div>
+
+        <div>
+
+            <label for="status" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Status</label>
+
+            <input type="text" id="status" name="status" value="Aktif"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
         </div>
 
 
-
         <div class="flex justify-end gap-4 border-t border-[#EFEDE6] pt-6">
 
-            <a href="{{ route('students.index') }}" class="px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-[#16213A]">Batal</a>
+            <a href="{{ route('teachers.index') }}"
+                class="px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-[#16213A]">Batal</a>
 
             <button type="submit"
                 class="bg-[#16213A] px-6 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">Perbarui
