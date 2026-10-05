@@ -45,21 +45,15 @@ class StudentController extends Controller
         $title = 'Sistem Sekolah | Mengubah Data Siswa';
 
         return view('students.edit', [
-            'title' => $title
-            'student' => $student
+            'title' => $title,
+            'student' => $student,
         ]);
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         //validasi
-        $validatedRequest = $request->validate([
-            'nis' => ['required', 'string', 'size:4', 'unique:students,nis'],
-            'name' => ['required', 'string'],
-            'gender' => ['required', 'in:Laki-laki,Perempuan'],
-            'major' => ['required', 'string', 'in:AKL,BID,TKJ'],
-            'class' => ['required', 'string'],
-        ]);
+        $validatedRequest = $request->validated();
 
         //tambahkan data ke database
        Student::create($validatedRequest);
@@ -69,16 +63,10 @@ class StudentController extends Controller
 
     }
 
-    public function update(Request $request, Student $student)
+    public function update(UpdateRequest $request, Student $student)
     {
         //validasi
-        $validatedRequest = $request->validate([
-            'nis' => ['required', 'string', 'size:4', 'unique:students,nis,' . $student->id],
-            'name' => ['required', 'string'],
-            'gender' => ['required', 'in:Laki-laki,Perempuan'],
-            'major' => ['required', 'string', 'in:AKL,BID,TKJ'],
-            'class' => ['required', 'string'],
-        ]);
+        $validatedRequest = $request->validate;
 
         //update data 
         $student->update($validatedRequest);
