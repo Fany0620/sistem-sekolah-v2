@@ -16,8 +16,10 @@ return Application::configure(basePath: dirname(__DIR__))
             'role' => CheckByRole::class,
         ]);
 
-        $middleware->redirectUserTo('/students');
-        $middleware->redirectGuestTo('/login');
+        $middleware->redirectTo(
+            guests: '/login',
+            users: '/students'
+        );
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

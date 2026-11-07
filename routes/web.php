@@ -17,10 +17,10 @@ Route::get('/', function () {
 });
 
 //Authentication
-Route::get('/login', [AuthController::class, 'loginView'])->name('login-view')->middlware('guest');
-Route::post('/login', [AuthController::class, 'loginPost'])->name('login-post')->middlware('guest');
-Route::get('/register', [AuthController::class, 'registerView'])->name('register-view')->middlware('guest');
-Route::post('/register', [AuthController::class, 'registerPost'])->name('register-post')->middlware('guest');
+Route::get('/login', [AuthController::class, 'loginView'])->name('login-view')->middleware('guest');
+Route::post('/login', [AuthController::class, 'loginPost'])->name('login-post')->middleware('guest');
+Route::get('/register', [AuthController::class, 'registerView'])->name('register-view')->middleware('guest');
+Route::post('/register', [AuthController::class, 'registerPost'])->name('register-post')->middleware('guest');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 
